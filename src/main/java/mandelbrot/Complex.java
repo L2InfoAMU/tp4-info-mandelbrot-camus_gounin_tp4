@@ -72,7 +72,7 @@ public class Complex {
      * @return the complex <code>real + 0 i</code>
      */
     public static Complex real(double real) {
-        return new Complex(0,real);
+        return new Complex(real ,0);
     }
 
     /**
@@ -120,7 +120,7 @@ public class Complex {
      * @param factor the complex number to multiply to <code>this</code>
      * @return the complex number {@code this * factor}
      */
-    Complex multiply(Complex factor) {
+    private Complex multiply(Complex factor) {
         return new Complex(
                 this.real * factor.real + this.imaginary * factor.imaginary,
                 this.real * factor.imaginary - this.imaginary * factor.real
