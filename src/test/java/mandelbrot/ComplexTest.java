@@ -153,4 +153,19 @@ public class ComplexTest {
         assertEquals(new Complex(-4,4), new Complex(2,2).multiply(twoI));
         assertEquals(new Complex(0,6), new Complex(-3,3).multiply(oneMinusI));
     }
+
+    @Test
+    void testSquaredModulus(){
+        assertEquals(5, new Complex(1,2).squaredModulus());
+        assertEquals(13, new Complex(2,-3).squaredModulus());
+        assertEquals(20, new Complex(-4,-2).squaredModulus());
+        assertEquals(29, new Complex(-5,2).squaredModulus());
+    }
+    @Test
+    void testModulus(){
+        assertEquals(Math.sqrt(5), new Complex(1,2).modulus());
+        assertEquals(Math.sqrt(13), new Complex(2,-3).modulus());
+        assertEquals(Math.sqrt(20), new Complex(-4,-2).modulus());
+        assertEquals(Math.sqrt(29), new Complex(-5,2).modulus());
+    }
 }
