@@ -180,4 +180,22 @@ public class ComplexTest {
         assertEquals(new Complex (-4,0), new Complex(-1,-1).pow(4));
 
     }
+
+    @Test
+    void testScale(){
+        assertEquals(ZERO, new Complex(1,2).scale(0));
+        assertEquals(new Complex (-1,-1), new Complex(-1,-1).scale(1));
+        assertEquals(new Complex (6,-4), new Complex(3,-2).scale(2));
+        assertEquals(new Complex (3,-6), new Complex(-1,2).scale(-3));
+        assertEquals(new Complex (-4,-4), new Complex(-1,-1).scale(4));
+    }
+
+    @Test
+    void testEquals(){
+        assertEquals(true, ZERO.equals(ZERO));
+        assertEquals(true, onePlusI.equals(onePlusI));
+        assertEquals(true, minusI.equals(minusI));
+        assertEquals(false, minusI.equals(-1));
+        assertEquals(false, ZERO.equals(minusI));
+    }
 }
